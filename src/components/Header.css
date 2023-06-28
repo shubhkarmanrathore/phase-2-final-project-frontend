@@ -1,0 +1,11 @@
+.header {
+   border: solid 2px red;
+   margin-right: 1%;
+   display: flex;
+}
+
+img {
+    height: 50px;
+    width: 50px;
+}
+

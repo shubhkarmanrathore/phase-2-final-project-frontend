@@ -1,0 +1,20 @@
+.blog-image {
+height: 250px;
+width: 300px;
+padding: 0.5rem;
+}
+
+.blog-heading {
+   padding-left: 0.5rem;
+   padding-right: 0.5rem;
+}
+
+.blog-text {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.blog-date {
+    padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}

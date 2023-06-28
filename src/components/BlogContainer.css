@@ -1,0 +1,6 @@
+.blog-container {
+    border: solid 2px green;
+    display: flex;
+    justify-content: center;
+    padding-left: 4rem;
+}
