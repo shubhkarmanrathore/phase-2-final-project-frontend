@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Blog.css";
-import Card from 'react-bootstrap/Card';
-import "bootstrap/dist/css/bootstrap.min.css"
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
-import BlogModal from "./BlogModal";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 function Blog({ blog, onDeleteClick }) {
+  const [likes, setLikes] = useState(blog.likes);
+
   function deleteBlog() {
     fetch(`https://json-server-2-i5l2.onrender.com/toys/${blog.id}`, {
       method: "DELETE",
@@ -18,16 +17,43 @@ function Blog({ blog, onDeleteClick }) {
       });
   }
 
+  function postLikes() {
+    fetch(`https://json-server-2-i5l2.onrender.com/toys/${blog.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ likes: likes + 1 }),
+    })
+      .then((res) => res.json())
+      .then((data) => setLikes(parseInt(data.likes)));
+  }
+
   return (
-    <Card className="bg-light text-black" style={{ width: '300px'}}>
-      <Card.Img variant="top" className="blog-image" src={blog.image} alt={blog.heading} />
-      <Card.Title className="blog-heading">{blog.heading}</Card.Title>
-      <Card.Text className="blog-text">{blog.author}</Card.Text>
-      <Card.Text className="blog-text">{blog.content}</Card.Text>
-      <p className="blog-date">{blog.date}</p>
-      <BlogModal blog={blog}/>
-      <Button variant="primary" onClick={deleteBlog}>DELETE</Button>
-    </Card>
+    <main>
+      <div className="blog">
+        <img
+          variant="top"
+          className="blog-image"
+          src={blog.image}
+          alt={blog.heading}
+        />
+        <h2 className="blog-heading">{blog.heading}</h2>
+        <p className="blog-text">{blog.author}</p>
+        {/* <p className="blog-text">{blog.content}</p> */}
+        <p className="blog-date">{blog.date}</p>
+        <button className="like-btn" onClick={postLikes}>
+          👍
+        </button>
+        <p>Likes : {likes}</p>
+        <Link to={`/blog/${blog.id}`}>
+          <Button variant="primary">Read More</Button>
+        </Link>
+        <Button variant="primary" onClick={deleteBlog}>
+          DELETE
+        </Button>
+      </div>
+    </main>
   );
 }
 

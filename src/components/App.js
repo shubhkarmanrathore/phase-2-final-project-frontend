@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import Navbar from './Navbar';
-import BlogContainer from './BlogContainer';
-import Footer from './Footer';
+import Navbar from "./Navbar";
+import BlogContainer from "./BlogContainer";
+import Footer from "./Footer";
 import BlogForm from "./BlogForm";
+import BlogPage from "./BlogPage";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   const [blogs, setBlogs] = useState([]);
   const [formVisible, setFormVisible] = useState(false);
-  const [dropdownVisible, setDropdownVisible] = useState(false);
   const [blogPost, setBlogPost] = useState({
     heading: "",
     image: "",
@@ -18,25 +19,23 @@ function App() {
   });
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  
-
   const postBlog = (event) => {
     event.preventDefault();
-
-    // Get the current date and time
-    const currentDate = new Date();
-    const currentDateTime = currentDate.toISOString();
-
-    // Create a new blog post object
+    const currentDate = new Date(Date.now());
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() + 1;
+    const day = currentDate.getDate();
+    const formattedDate = `${year}-${month < 10 ? "0" : ""}${month}-${
+      day < 10 ? "0" : ""
+    }${day}`;
     const newBlogPost = {
       heading: blogPost.heading,
       image: blogPost.image,
       content: blogPost.content,
       author: blogPost.author,
       likes: blogPost.likes,
-      date: currentDateTime,
+      date: formattedDate,
     };
-    
 
     fetch("https://json-server-2-i5l2.onrender.com/toys", {
       method: "POST",
@@ -48,7 +47,7 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setBlogs((prevBlogs) => [...prevBlogs, data]); // Add the new blog post to the state
+        setBlogs((prevBlogs) => [...prevBlogs, data]);
         setBlogPost({
           author: "",
           heading: "",
@@ -61,10 +60,6 @@ function App() {
 
   const toggleFormVisibility = () => {
     setFormVisible(!formVisible);
-  };
-
-  const toggleDropdown = () => {
-    setDropdownVisible(!dropdownVisible);
   };
 
   const handleSearch = (term) => {
@@ -87,25 +82,35 @@ function App() {
   }, [blogs, searchTerm]);
 
   const handleDeleteBlog = (deletedBlog) => {
-    setBlogs((prevBlogs) => prevBlogs.filter((blog) => blog.id !== deletedBlog.id));
+    setBlogs((prevBlogs) =>
+      prevBlogs.filter((blog) => blog.id !== deletedBlog.id)
+    );
   };
 
-
   return (
-    <div className='app'>
-      <Navbar
-        toggleFormVisibility={toggleFormVisibility}
-        toggleDropdown={toggleDropdown}
-        dropdownVisible={dropdownVisible}
-        onSearch={handleSearch}
-      />
-      {formVisible && (
-       <BlogForm blog={blogPost} postBlog={postBlog} setBlog={setBlogPost} />
-
-      )}
-      <BlogContainer blogs={searchTerm ? searchResults : blogs}  onDeleteClick={handleDeleteBlog} />
-      {/* <Footer /> */}
-    </div>
+    <Router>
+      <div className="app">
+        <Navbar
+          toggleFormVisibility={toggleFormVisibility}
+          onSearch={handleSearch}
+        />
+        {formVisible && (
+          <BlogForm blog={blogPost} postBlog={postBlog} setBlog={setBlogPost} />
+        )}
+        <Switch>
+          <Route exact path="/">
+            <BlogContainer
+              blogs={searchTerm ? searchResults : blogs}
+              onDeleteClick={handleDeleteBlog}
+            />
+          </Route>
+          <Route path="/blog/:id">
+            <BlogPage blogs={blogs} />
+          </Route>
+        </Switch>
+        {/* <Footer /> */}
+      </div>
+    </Router>
   );
 }
 

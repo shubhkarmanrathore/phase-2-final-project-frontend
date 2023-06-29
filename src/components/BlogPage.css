@@ -1,0 +1,41 @@
+.blog-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blog-page h2 {
+    font-size: 32px;
+    margin-bottom: 24px;
+    color: #333333;
+  }
+  
+  .blog-page img {
+    display: block;
+    max-width: 100%;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blog-page p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    color: #555555;
+  }
+  
+  .blog-page a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .blog-page a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Additional styles can be added as per your design preferences */
+  
