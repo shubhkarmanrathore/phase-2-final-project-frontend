@@ -10,9 +10,9 @@ In the project directory, you can run:
 
 ## Acknowledgments
 - This project was created as a learning exercise, and it would not have been possible without the resources and support of the following:
-2. Flatiron School community 
-3. Teachers and fellow students 
-4. The web development community on Stack Overflow and MDN Web Docs for providing helpful resources and insights
+- Flatiron School community 
+- Teachers and fellow students 
+- The web development community on Stack Overflow and MDN Web Docs for providing helpful resources and insights
 
 ## License
 This project is licensed under MIT license. Copyright (c) 2012-2023 Scott Chacon and others
