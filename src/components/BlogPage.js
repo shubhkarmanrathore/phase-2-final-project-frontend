@@ -6,7 +6,7 @@ import Form from "react-bootstrap/Form";
 
 function BlogPage({ blogs }) {
   const { id } = useParams();
-  const blog = blogs.find((blog) => blog.id === parseInt(id));
+  const blog = blogs.find((blog) => blog.id === parseInt(id, 10));
 
   const [isEditing, setIsEditing] = useState(false);
   const [editedBlog, setEditedBlog] = useState(blog);
@@ -34,7 +34,7 @@ function BlogPage({ blogs }) {
       .then((res) => res.json())
       .then(() => {
         // After saving the edited blog, update the state with the new data
-        setEditedBlog(blog);
+        // setEditedBlog(blog);
         setIsEditing(false);
         // onEditBlog(blog);
       });
