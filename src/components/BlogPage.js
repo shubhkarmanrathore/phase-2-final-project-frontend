@@ -97,7 +97,7 @@ function BlogPage({ blogs }) {
       ) : (
         <>
           <h2>{blog.heading}</h2>
-          <img src={blog.image} alt="blog-image" className="blog-image" />
+          <img src={blog.image} alt={blog.image} className="blog-image" />
           <p>Written by: {blog.author}</p>
           <p>Published: {blog.date}</p>
           <p>{blog.content}</p>
