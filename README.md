@@ -12,7 +12,7 @@
 - Create and Publish Blog Posts: Users can create, edit, and publish blog posts using a rich text editor or Markdown.
 - Search Functionality: Users can search for specific blog posts based on topic keywords.
 - Image Uploads: Allow authors to upload images to include in their blog posts, enhancing the visual appeal of the content.
-## NOTE : The deployed backend instance requires a spin-up after the instance has been inactive for a while. (This is just a part of the free tier by render.com) It is necessary for all the CRUD functionality to work. This is my backend deployed link https://json-server-2-i5l2.onrender.com/blogs that you might need to open it once before using the website.
+### NOTE : The deployed backend instance requires a spin-up after the instance has been inactive for a while. (This is just a part of the free tier by render.com) It is necessary for all the CRUD functionality to work. This is my backend deployed link https://json-server-2-i5l2.onrender.com/blogs that you might need to open it once before using the website.
 
 ## Technologies Used
 - HTML, CSS, Javascript, and ReactJS were used to create the UI.
