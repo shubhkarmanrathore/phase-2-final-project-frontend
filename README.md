@@ -1,10 +1,32 @@
 # phase-2-final-project-frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Deployed link: https://blogs-on-hype.netlify.app/
 
-In the project directory, you can run:
+## Hype - The future of blogging
+
+
+## Features
+- This is a CRUD application.
+- User-friendly Interface: The app provides a clean and intuitive user interface, making it easy for users to read and create blog posts.
+- Responsive Design: The app is fully responsive and works seamlessly on various devices, including desktops, tablets, and mobile phones.
+- Create and Publish Blog Posts: Users can create, edit, and publish blog posts using a rich text editor or Markdown.
+- Search Functionality: Users can search for specific blog posts based on topic keywords.
+- Image Uploads: Allow authors to upload images to include in their blog posts, enhancing the visual appeal of the content.
+NOTE : The deployed backend instance requires a spin-up after the instance has been inactive for a while. (This is just a part of the free tier by render.com) It is necessary for all the CRUD functionality to work. This is my backend deployed link https://json-server-2-i5l2.onrender.com/blogs that you might need to open it once before using the website.
+
+## Technologies Used
+- HTML, CSS, Javascript, and ReactJS were used to create the UI.
+- Render.com is used to deploy my db.json which stores the blogs.
+- Netlify.com was used to deploy my frontend.
+
+## Getting started
+- Clone the repository phase-2-final-project-frontend
+- npm install the node modules packages
+- In your terminal, type command: npm start
+- Once the application is loaded, you would be routed to Hype's homepage where you can view all the blogs.
+- You can click on 'Read more' to read the full story.
+- The backend server is already deployed on render.com
+- This frontend is deployed on Netlify and here is the link: https://blogs-on-hype.netlify.app/
 
 ## Non-technical walkthrough video
 
