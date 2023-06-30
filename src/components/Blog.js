@@ -8,7 +8,7 @@ function Blog({ blog, onDeleteClick }) {
   const [likes, setLikes] = useState(blog.likes);
 
   function deleteBlog() {
-    fetch(`https://json-server-2-i5l2.onrender.com/toys/${blog.id}`, {
+    fetch(`https://json-server-2-i5l2.onrender.com/blogs/${blog.id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -18,7 +18,7 @@ function Blog({ blog, onDeleteClick }) {
   }
 
   function postLikes() {
-    fetch(`https://json-server-2-i5l2.onrender.com/toys/${blog.id}`, {
+    fetch(`https://json-server-2-i5l2.onrender.com/blogs/${blog.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -40,16 +40,15 @@ function Blog({ blog, onDeleteClick }) {
         />
         <h2 className="blog-heading">{blog.heading}</h2>
         <p className="blog-text">{blog.author}</p>
-        {/* <p className="blog-text">{blog.content}</p> */}
         <p className="blog-date">{blog.date}</p>
         <button className="like-btn" onClick={postLikes}>
           👍
         </button>
-        <p>Likes : {likes}</p>
+        <p>Likes: {likes}</p>
         <Link to={`/blog/${blog.id}`}>
           <Button variant="primary">Read More</Button>
         </Link>
-        <Button variant="primary" onClick={deleteBlog}>
+        <Button variant="danger" onClick={() => onDeleteClick(blog)}>
           DELETE
         </Button>
       </div>

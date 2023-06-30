@@ -36,3 +36,7 @@
   .blog-page a:hover {
     text-decoration: underline;
   }
+
+  .blog-image {
+   height: auto;
+  }

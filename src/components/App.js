@@ -37,7 +37,7 @@ function App() {
       date: formattedDate,
     };
 
-    fetch("https://json-server-2-i5l2.onrender.com/toys", {
+    fetch("https://json-server-2-i5l2.onrender.com/blogs", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -67,7 +67,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetch("https://json-server-2-i5l2.onrender.com/toys")
+    fetch("https://json-server-2-i5l2.onrender.com/blogs")
       .then((res) => res.json())
       .then((data) => {
         setBlogs(data);
@@ -86,6 +86,13 @@ function App() {
       prevBlogs.filter((blog) => blog.id !== deletedBlog.id)
     );
   };
+
+  // const handleEditBlog = (editedBlog) => {
+  //   const updatedBlogs = blogs.map((blog) =>
+  //     blog.id === editedBlog.id ? editedBlog : blog
+  //   );
+  //   setBlogs(updatedBlogs);
+  // };
 
   return (
     <Router>
@@ -108,7 +115,7 @@ function App() {
             <BlogPage blogs={blogs} />
           </Route>
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </Router>
   );
