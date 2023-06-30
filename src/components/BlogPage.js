@@ -14,7 +14,8 @@ function BlogPage({ blogs }) {
     <div className="blog-page">
       <h2>{blog.heading}</h2>
       <img src={blog.image}/>
-      <p>{blog.author}</p>
+      <p>Written by : {blog.author}</p>
+      <p>Published : {blog.date}</p>
       <p>{blog.content}</p>
       {/* ... */}
     </div>

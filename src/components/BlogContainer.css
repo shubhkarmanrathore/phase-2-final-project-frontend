@@ -1,28 +1,6 @@
-/* .blog-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  } */
-
-  /* BlogContainer.css */
-
   .blog-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     margin-top: 20px;
   }
-
-/* @media (max-width: 767px) {
-  .blog-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .blog-container {
-    grid-template-columns: 1fr;
-  }
-} */
