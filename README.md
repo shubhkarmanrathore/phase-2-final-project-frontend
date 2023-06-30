@@ -9,7 +9,7 @@ In the project directory, you can run:
 ## Non-technical walkthrough video
 
 ## Acknowledgments
-1. This project was created as a learning exercise, and it would not have been possible without the resources and support of the following:
+- This project was created as a learning exercise, and it would not have been possible without the resources and support of the following:
 2. Flatiron School community 
 3. Teachers and fellow students 
 4. The web development community on Stack Overflow and MDN Web Docs for providing helpful resources and insights
