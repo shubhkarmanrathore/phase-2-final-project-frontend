@@ -7,7 +7,6 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
 
 function NavBar({ toggleFormVisibility, onSearch }) {
   return (
@@ -26,12 +25,6 @@ function NavBar({ toggleFormVisibility, onSearch }) {
           <Button variant="online-success" onClick={toggleFormVisibility}>
             Create a Blog
           </Button>
-          {/* <NavDropdown title="More Options " id="navbarScrollingDropdown">
-            <NavDropdown.Item href="#profile">Profile</NavDropdown.Item>
-            <NavDropdown.Item href="#settings">Settings</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#contact">Contact Us</NavDropdown.Item>
-          </NavDropdown> */}
         </Nav>
       </Container>
     </Navbar>
