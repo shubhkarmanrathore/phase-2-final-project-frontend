@@ -1,4 +1,3 @@
-// Search.js
 import React from "react";
 import "./Search.css";
 import Form from "react-bootstrap/Form";
