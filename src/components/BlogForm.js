@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function BlogForm({ blog, postBlog, setBlog}) {
+function BlogForm({ blog, postBlog, setBlog }) {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setBlog((prevBlog) => ({

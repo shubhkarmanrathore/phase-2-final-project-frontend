@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 function Blog({ blog, onDeleteClick }) {
   const [likes, setLikes] = useState(blog.likes);
 
-  
   function postLikes() {
     fetch(`https://json-server-2-i5l2.onrender.com/blogs/${blog.id}`, {
       method: "PATCH",
@@ -16,10 +15,10 @@ function Blog({ blog, onDeleteClick }) {
       },
       body: JSON.stringify({ likes: likes + 1 }),
     })
-    .then((res) => res.json())
-    .then((data) => setLikes(parseInt(data.likes)));
+      .then((res) => res.json())
+      .then((data) => setLikes(parseInt(data.likes)));
   }
-  
+
   function deleteBlog() {
     fetch(`https://json-server-2-i5l2.onrender.com/blogs/${blog.id}`, {
       method: "DELETE",

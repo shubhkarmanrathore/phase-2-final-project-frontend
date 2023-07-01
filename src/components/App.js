@@ -87,12 +87,13 @@ function App() {
     );
   };
 
-  // const handleEditBlog = (editedBlog) => {
-  //   const updatedBlogs = blogs.map((blog) =>
-  //     blog.id === editedBlog.id ? editedBlog : blog
-  //   );
-  //   setBlogs(updatedBlogs);
-  // };
+  const fetchBlogsData = () => {
+    fetch("https://json-server-2-i5l2.onrender.com/blogs")
+      .then((res) => res.json())
+      .then((data) => {
+        setBlogs(data);
+      });
+  };
 
   return (
     <Router>
@@ -102,7 +103,7 @@ function App() {
           onSearch={handleSearch}
         />
         {formVisible && (
-          <BlogForm blog={blogPost} postBlog={postBlog} setBlog={setBlogPost}/>
+          <BlogForm blog={blogPost} postBlog={postBlog} setBlog={setBlogPost} />
         )}
         <Switch>
           <Route exact path="/">
@@ -112,7 +113,7 @@ function App() {
             />
           </Route>
           <Route path="/blog/:id">
-            <BlogPage blogs={blogs} />
+            <BlogPage blogs={blogs} fetchBlogsData={fetchBlogsData} />
           </Route>
         </Switch>
         <Footer />
