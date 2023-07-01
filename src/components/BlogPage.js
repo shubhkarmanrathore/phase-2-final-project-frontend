@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./BlogPage.css";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
@@ -8,7 +8,6 @@ function BlogPage({ blogs, fetchBlogsData }) {
   const { id } = useParams();
   const blog = blogs.find((blog) => blog.id === parseInt(id, 10));
   console.log(id);
-  const history = useHistory();
 
   const [isEditing, setIsEditing] = useState(false);
   const [editedBlog, setEditedBlog] = useState(blog);
