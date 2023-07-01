@@ -6,13 +6,15 @@
 HYPE is a cutting-edge blogging website built with ReactJS, offering a seamless and user-friendly experience. Whether you're a seasoned writer or a budding blogger, HYPE provides you with the perfect platform to share your thoughts, experiences, and passions with the world. Let your creativity flow and let HYPE be your canvas to express yourself and connect with like-minded individuals from all corners of the globe. Happy blogging!
 
 ## Features
-- This is a CRUD application.
+- This is a CRUD application. It uses GET, POST, PUT/PATCH, DELETE requests for its functionality.
 - User-friendly Interface: The app provides a clean and intuitive user interface, making it easy for users to read and create blog posts.
 - Responsive Design: The app is fully responsive and works seamlessly on various devices, including desktops, tablets, and mobile phones.
-- Create and Publish Blog Posts: Users can create, edit, and publish blog posts using a rich text editor or Markdown.
+- Create and Publish Blog Posts: Users can create, edit, and publish blog posts using a rich text editor.
 - Search Functionality: Users can search for specific blog posts based on topic keywords.
 - Image Uploads: Allow authors to upload images to include in their blog posts, enhancing the visual appeal of the content.
-### NOTE : The deployed backend instance requires a spin-up after the instance has been inactive for a while. (This is just a part of the free tier by render.com) It is necessary for all the CRUD functionality to work. This is my backend deployed link https://json-server-2-i5l2.onrender.com/blogs that you might need to open it once before using the website.
+- Delete blogs - Users can also delete a blog by clicking on the DELETE button provided on each blog.
+- Home - The HYPE logo acts the home button after users have finished reading a story.
+### NOTE : The deployed backend instance requires a spin-up after the instance has been inactive for a while. (This is just a part of the free tier by render.com) It is necessary for all the CRUD functionality to work. This is my backend deployed link https://json-server-2-i5l2.onrender.com/blogs that you might need to open once before using the website.
 
 ## Technologies Used
 - HTML, CSS, Javascript, and ReactJS were used to create the UI.
@@ -21,7 +23,7 @@ HYPE is a cutting-edge blogging website built with ReactJS, offering a seamless 
 
 ## Getting started
 - Clone the repository phase-2-final-project-frontend
-- npm install the node modules packages
+- npm install the node module packages
 - In your terminal, type command: npm start
 - Once the application is loaded, you would be routed to Hype's homepage where you can view all the blogs.
 - You can click on 'Read more' to read the full story.
