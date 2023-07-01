@@ -55,6 +55,7 @@ function App() {
           content: "",
           likes: 0,
         });
+        toggleFormVisibility();
       });
   };
 
@@ -103,7 +104,7 @@ function App() {
           onSearch={handleSearch}
         />
         {formVisible && (
-          <BlogForm blog={blogPost} postBlog={postBlog} setBlog={setBlogPost} />
+          <BlogForm blog={blogPost} postBlog={postBlog} setBlog={setBlogPost}/>
         )}
         <Switch>
           <Route exact path="/">
