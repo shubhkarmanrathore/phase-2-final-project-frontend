@@ -7,9 +7,11 @@ import Form from "react-bootstrap/Form";
 function BlogPage({ blogs }) {
   const { id } = useParams();
   const blog = blogs.find((blog) => blog.id === parseInt(id, 10));
+  console.log(id)
 
   const [isEditing, setIsEditing] = useState(false);
   const [editedBlog, setEditedBlog] = useState(blog);
+  console.log(blog);
 
   const handleEditClick = () => {
     setIsEditing(true);
@@ -32,15 +34,15 @@ function BlogPage({ blogs }) {
       body: JSON.stringify(editedBlog),
     })
       .then((res) => res.json())
-      .then(() => {
-        // After saving the edited blog, update the state with the new data
-        // setEditedBlog(blog);
+      .then((data) => {
+        setEditedBlog(data);
+        console.log(data)
         setIsEditing(false);
-        // onEditBlog(blog);
       });
   };
 
-  if (!blog) {
+
+  if (!editedBlog) {
     return <div>Blog not found</div>;
   }
 
@@ -96,11 +98,11 @@ function BlogPage({ blogs }) {
         </>
       ) : (
         <>
-          <h2>{blog.heading}</h2>
-          <img src={blog.image} alt={blog.image} className="blog-image" />
-          <p>Written by: {blog.author}</p>
-          <p>Published: {blog.date}</p>
-          <p>{blog.content}</p>
+          <h2>{editedBlog.heading}</h2>
+          <img src={editedBlog.image} alt={editedBlog.image} className="editedBlog-image" />
+          <p>Written by: {editedBlog.author}</p>
+          <p>Published: {editedBlog.date}</p>
+          <p>{editedBlog.content}</p>
           <Button variant="primary" onClick={handleEditClick}>
             Edit
           </Button>
