@@ -31,6 +31,7 @@ HYPE is a cutting-edge blogging website built with ReactJS, offering a seamless 
 - This frontend is deployed on Netlify. Link: https://blogs-on-hype.netlify.app/
 
 ## Non-technical walkthrough video
+Watch the full video here: https://www.loom.com/share/3af8f1502f7b486aa55ee72889951567?sid=f92a4346-c1b4-4c6e-9f13-738f3fe8757f
 
 ## Acknowledgments
 - This project was created as a learning exercise, and it would not have been possible without the resources and support of the following:
