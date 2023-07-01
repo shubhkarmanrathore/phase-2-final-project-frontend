@@ -25,8 +25,8 @@ HYPE is a cutting-edge blogging website built with ReactJS, offering a seamless 
 - In your terminal, type command: npm start
 - Once the application is loaded, you would be routed to Hype's homepage where you can view all the blogs.
 - You can click on 'Read more' to read the full story.
-- The backend server is already deployed on render.com
-- This frontend is deployed on Netlify and here is the link: https://blogs-on-hype.netlify.app/
+- The backend server is already deployed on render.com. Link : https://json-server-2-i5l2.onrender.com/blogs
+- This frontend is deployed on Netlify. Link: https://blogs-on-hype.netlify.app/
 
 ## Non-technical walkthrough video
 
